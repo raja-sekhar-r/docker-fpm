@@ -23,7 +23,8 @@ setup-build:
 
 .PHONY: docker-build
 docker-build:
-	docker buildx build --platform="linux/amd64,linux/arm64" -t $(IMG):$(VERSION) .
+	#docker buildx build --platform="linux/amd64,linux/arm64" -t $(IMG):$(VERSION) .
+	docker build -t $(IMG):$(VERSION) .
 
 .PHONY: docker-push
 docker-push: docker-build
